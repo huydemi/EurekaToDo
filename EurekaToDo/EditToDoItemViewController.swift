@@ -163,7 +163,7 @@ class EditToDoItemViewController: FormViewController {
   }
   
   private func initialize() {
-    let deleteButton = UIBarButtonItem(title: "Back", style: .plain, target: self, action: .deleteButtonPressed)
+    let deleteButton = UIBarButtonItem(title: "Delete", style: .plain, target: self, action: .deleteButtonPressed)
     navigationItem.leftBarButtonItem = deleteButton
     
     let saveButton = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: .saveButtonPressed)
@@ -181,21 +181,17 @@ class EditToDoItemViewController: FormViewController {
   
   @objc fileprivate func deleteButtonPressed(_ sender: UIBarButtonItem) {
    
-    // Uncomment these lines
-//    let alert = UIAlertController(title: "Delete this item?", message: nil, preferredStyle: .alert)
-//    let cancel = UIAlertAction(title: "Cancel", style: .cancel)
-//    let delete = UIAlertAction(title: "Delete", style: .destructive) { [weak self] _ in
-//      self?.viewModel.delete()
-//      _ = self?.navigationController?.popViewController(animated: true)
-//    }
-//    
-//    alert.addAction(delete)
-//    alert.addAction(cancel)
-//    
-//    navigationController?.present(alert, animated: true, completion: nil)
+    let alert = UIAlertController(title: "Delete this item?", message: nil, preferredStyle: .alert)
+    let cancel = UIAlertAction(title: "Cancel", style: .cancel)
+    let delete = UIAlertAction(title: "Delete", style: .destructive) { [weak self] _ in
+      self?.viewModel.delete()
+      _ = self?.navigationController?.popViewController(animated: true)
+    }
     
-    // Delete this line
-      _ = navigationController?.popViewController(animated: true)
+    alert.addAction(delete)
+    alert.addAction(cancel)
+    
+    navigationController?.present(alert, animated: true, completion: nil)
   }
 }
 

@@ -66,10 +66,9 @@ class ToDoListViewController: UIViewController {
   
   // Actions
   @objc fileprivate func addButtonPressed(_ sender: UIBarButtonItem) {
-    // Uncomment these lines
-//    let addViewModel = viewModel.addViewModel()
-//    let addVC = EditToDoItemViewController(viewModel: addViewModel)
-//    navigationController?.pushViewController(addVC, animated: true)
+    let addViewModel = viewModel.addViewModel()
+    let addVC = EditToDoItemViewController(viewModel: addViewModel)
+    navigationController?.pushViewController(addVC, animated: true)
   }
 }
 
