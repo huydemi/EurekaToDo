@@ -21,8 +21,9 @@
  */
 
 import UIKit
+import Eureka
 
-class EditToDoItemViewController: UIViewController {
+class EditToDoItemViewController: FormViewController {
   
   var viewModel: ViewModel!
   
@@ -41,6 +42,17 @@ class EditToDoItemViewController: UIViewController {
  
   override func viewDidLoad() {
     super.viewDidLoad()
+    
+    form
+      +++ Section()
+      <<< TextRow() {
+        $0.title = "Description"
+        $0.placeholder = "e.g. Pick up my laundry"
+        $0.value = viewModel.title
+        $0.onChange { [unowned self] row in
+          self.viewModel.title = row.value
+        }
+    }
   }
   
   private func initialize() {
