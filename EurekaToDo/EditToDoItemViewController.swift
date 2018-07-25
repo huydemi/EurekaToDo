@@ -65,6 +65,16 @@ class EditToDoItemViewController: FormViewController {
           }
         }
       }
+      <<< PushRow<String>() {
+        $0.title = "Repeats"
+        $0.value = viewModel.repeatFrequency
+        $0.options = viewModel.repeatOptions
+        $0.onChange { [unowned self] row in
+          if let value = row.value {
+            self.viewModel.repeatFrequency = value
+          }
+        }
+      }
   }
   
   private func initialize() {
