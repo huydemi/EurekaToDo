@@ -17,6 +17,7 @@
 		5FDA10381E5C4B4F00E51FC9 /* ToDoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FDA10371E5C4B4F00E51FC9 /* ToDoListViewController.swift */; };
 		5FDA103D1E5C4B4F00E51FC9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5FDA103C1E5C4B4F00E51FC9 /* Assets.xcassets */; };
 		5FDA10401E5C4B4F00E51FC9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5FDA103E1E5C4B4F00E51FC9 /* LaunchScreen.storyboard */; };
+		6B58475121087099006ED1D8 /* ToDoCategoryRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B58475021087099006ED1D8 /* ToDoCategoryRow.swift */; };
 		A90D09C033216AB1A29F9156 /* Pods_EurekaToDo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECF49502DB2DA082AA89CDE4 /* Pods_EurekaToDo.framework */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +36,7 @@
 		5FDA103C1E5C4B4F00E51FC9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5FDA103F1E5C4B4F00E51FC9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5FDA10411E5C4B4F00E51FC9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6B58475021087099006ED1D8 /* ToDoCategoryRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoCategoryRow.swift; sourceTree = "<group>"; };
 		ECF49502DB2DA082AA89CDE4 /* Pods_EurekaToDo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EurekaToDo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -81,6 +83,7 @@
 			children = (
 				5F10B5301E5EDC64006DF3B8 /* EditToDoTableFooter.swift */,
 				5F9851C91E5C849F000B76C6 /* ToDoListTableViewCell.swift */,
+				6B58475021087099006ED1D8 /* ToDoCategoryRow.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -253,6 +256,7 @@
 				5F9851CC1E5C8A8C000B76C6 /* EditToDoItemViewController.swift in Sources */,
 				5F9851C71E5C7906000B76C6 /* ToDoListViewModel.swift in Sources */,
 				5F9851CE1E5C8AC4000B76C6 /* EditToDoItemViewModel.swift in Sources */,
+				6B58475121087099006ED1D8 /* ToDoCategoryRow.swift in Sources */,
 				5F9851C11E5C5495000B76C6 /* ToDo.swift in Sources */,
 				5F10B5311E5EDC64006DF3B8 /* EditToDoTableFooter.swift in Sources */,
 				5F9851CA1E5C849F000B76C6 /* ToDoListTableViewCell.swift in Sources */,

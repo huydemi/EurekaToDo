@@ -34,6 +34,31 @@ class EditToDoItemViewController: FormViewController {
     return formatter
   }()
   
+  let categorySectionTag: String = "add category section"
+  let categoryRowTag: String = "add category row"
+  
+  lazy var footerTapped: EditToDoTableFooter.TappedClosure = { [weak self] footer in
+    
+    guard let form = self?.form,
+      let tag = self?.categorySectionTag,
+      let section = form.sectionBy(tag: tag) else {
+        return
+    }
+    
+    footer.removeFromSuperview()
+    
+    section.hidden = false
+    section.evaluateHidden()
+    
+    if let rowTag = self?.categoryRowTag,
+      let row = form.rowBy(tag: rowTag) as? ToDoCategoryRow {
+      let category = self?.viewModel.categoryOptions[0]
+      self?.viewModel.category = category
+      row.value = category
+      row.cell.update()
+    }
+  }
+  
   // MARK: - Life Cycle
   convenience init(viewModel: ViewModel) {
     self.init()
@@ -113,6 +138,18 @@ class EditToDoItemViewController: FormViewController {
         $0.clearAction = .yes(style: .destructive)
         $0.onChange { [unowned self] row in
           self.viewModel.image = row.value
+        }
+      }
+      +++ Section("Category") {
+        $0.tag = self.categorySectionTag
+        $0.hidden = (self.viewModel.category != nil) ? false : true
+      }
+      <<< ToDoCategoryRow() { [unowned self] row in
+        row.tag = self.categoryRowTag
+        row.value = self.viewModel.category
+        row.options = self.viewModel.categoryOptions
+        row.onChange { [unowned self] row in
+          self.viewModel.category = row.value
         }
       }
   }
