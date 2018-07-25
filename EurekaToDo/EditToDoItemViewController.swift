@@ -52,7 +52,19 @@ class EditToDoItemViewController: FormViewController {
         $0.onChange { [unowned self] row in
           self.viewModel.title = row.value
         }
-    }
+      }
+      +++ Section()
+      <<< DateTimeRow() {
+        $0.dateFormatter = type(of: self).dateFormatter
+        $0.title = "Due date"
+        $0.value = viewModel.dueDate
+        $0.minimumDate = Date()
+        $0.onChange { [unowned self] row in
+          if let date = row.value {
+            self.viewModel.dueDate = date
+          }
+        }
+      }
   }
   
   private func initialize() {
