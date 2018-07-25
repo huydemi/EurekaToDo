@@ -52,6 +52,13 @@ class EditToDoItemViewController: FormViewController {
         $0.onChange { [unowned self] row in
           self.viewModel.title = row.value
         }
+        $0.add(rule: RuleRequired())
+        $0.validationOptions = .validatesOnChange
+        $0.cellUpdate { (cell, row) in
+          if !row.isValid {
+            cell.titleLabel?.textColor = .red
+          }
+        }
       }
       +++ Section()
       <<< DateTimeRow() {
@@ -111,7 +118,9 @@ class EditToDoItemViewController: FormViewController {
   
   // MARK: - Actions
   @objc fileprivate func saveButtonPressed(_ sender: UIBarButtonItem) {
+    if form.validate().isEmpty {
       _ = navigationController?.popViewController(animated: true)
+    }
   }
   
   @objc fileprivate func deleteButtonPressed(_ sender: UIBarButtonItem) {
