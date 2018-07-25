@@ -86,6 +86,17 @@ class EditToDoItemViewController: FormViewController {
           }
         }
       }
+      <<< AlertRow<String>() {
+        $0.title = "Reminder"
+        $0.selectorTitle = "Remind me"
+        $0.value = viewModel.reminder
+        $0.options = viewModel.reminderOptions
+        $0.onChange { [unowned self] row in
+          if let value = row.value {
+            self.viewModel.reminder = value
+          }
+        }
+      }
   }
   
   private func initialize() {
