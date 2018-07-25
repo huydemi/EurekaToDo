@@ -50,8 +50,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     UINavigationBar.appearance().barTintColor = UIColor(red: 237.0/255, green: 76/255, blue: 119/255, alpha: 1)
     UINavigationBar.appearance().isTranslucent = false
-    let navigationTitleAttributes: [String: Any] = {
-      return [ NSForegroundColorAttributeName: UIColor.white ]
+    let navigationTitleAttributes: [NSAttributedStringKey: Any] = {
+      return [ NSAttributedStringKey.foregroundColor: UIColor.white ]
     }()
     UINavigationBar.appearance().tintColor = .white
     UIBarButtonItem.appearance().setTitleTextAttributes(navigationTitleAttributes, for: .normal)
