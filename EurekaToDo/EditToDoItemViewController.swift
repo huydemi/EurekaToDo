@@ -22,6 +22,7 @@
 
 import UIKit
 import Eureka
+import ImageRow
 
 class EditToDoItemViewController: FormViewController {
   
@@ -102,6 +103,16 @@ class EditToDoItemViewController: FormViewController {
           if let value = row.value {
             self.viewModel.reminder = value
           }
+        }
+      }
+      +++ Section("Picture Attachment")
+      <<< ImageRow() {
+        $0.title = "Attachment"
+        $0.sourceTypes = [.PhotoLibrary, .SavedPhotosAlbum, .Camera]
+        $0.value = viewModel.image
+        $0.clearAction = .yes(style: .destructive)
+        $0.onChange { [unowned self] row in
+          self.viewModel.image = row.value
         }
       }
   }
