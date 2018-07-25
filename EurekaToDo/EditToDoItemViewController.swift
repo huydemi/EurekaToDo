@@ -75,6 +75,17 @@ class EditToDoItemViewController: FormViewController {
           }
         }
       }
+      +++ Section()
+      <<< SegmentedRow<String>() {
+        $0.title = "Priority"
+        $0.value = viewModel.priority
+        $0.options = viewModel.priorityOptions
+        $0.onChange { [unowned self] row in
+          if let value = row.value {
+            self.viewModel.priority = value
+          }
+        }
+      }
   }
   
   private func initialize() {
