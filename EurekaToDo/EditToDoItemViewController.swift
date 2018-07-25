@@ -152,6 +152,14 @@ class EditToDoItemViewController: FormViewController {
           self.viewModel.category = row.value
         }
       }
+    
+    let footer = EditToDoTableFooter(frame: .zero)
+    footer.action = footerTapped
+    
+    if let tableView = tableView, viewModel.category == nil {
+      tableView.tableFooterView = footer
+      tableView.tableFooterView?.frame = CGRect(x: 0, y: 0, width: tableView.bounds.width, height: 50.0)
+    }
   }
   
   private func initialize() {

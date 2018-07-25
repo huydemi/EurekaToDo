@@ -36,7 +36,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     dueDate: tomorrow,
                     priority: ToDo.Priority.medium.rawValue,
                     reminderDate: today,
-                    category: ToDo.Category.play.rawValue,
+                    //category: ToDo.Category.play.rawValue,
                     repeats: ToDo.RepeatFrequency.daily.rawValue,
                     image: nil)
     let viewModel = ToDoListViewController.ViewModel(toDos: [toDo])
